@@ -5,7 +5,12 @@ const app = express()
 
 
 //GET all books
-app.get((req,res)=>{
+app.get('/books', async(req,res)=>{
+    try {
+        res.status(200).json({message:'Get all Books'})
+    } catch (error) {
+        res.json({error: error.message})
+    }
 
 })
 
@@ -16,6 +21,9 @@ app.get((req,res)=>{
 
 
 // DELETE books by id
+
+
+//PUT (update) a book by id
 
 
 
