@@ -2,6 +2,7 @@ const express = require('express');
 
 const PORT = 5000
 const app = express()
+app.use(express.json())
 
 
 //GET all books
@@ -26,7 +27,15 @@ app.get('/books/:id', async(req,res)=>{
 })
 
 //POST books
+app.post('/books', async(req,res)=>{
+    try {
+        const {name, description} = req.body
+        res.status(200).json({message:`Books was create  ${name} & ${description}`})
+    } catch (error) {
+        res.json({error: error.message})
+    }
 
+})
 
 // DELETE books by id
 
