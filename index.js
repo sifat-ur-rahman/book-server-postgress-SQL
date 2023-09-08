@@ -15,7 +15,15 @@ app.get('/books', async(req,res)=>{
 })
 
 // GET a book by id
+app.get('/books/:id', async(req,res)=>{
+    try {
+        const {id} = req.params
+        res.status(200).json({message:`Specific book is returned with id ${id}`})
+    } catch (error) {
+        res.json({error: error.message})
+    }
 
+})
 
 //POST books
 
