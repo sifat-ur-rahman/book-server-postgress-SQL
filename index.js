@@ -49,7 +49,16 @@ app.delete('/books/:id', async(req,res)=>{
 })
 
 //PUT (update) a book by id
+app.put('/books/:id', async(req,res)=>{
+    try {
+        const {id} = req.params
+        const {name, description} = req.body
+        res.status(200).json({message:`Books was updated by ${id} id, name: ${name} & description: ${description}`})
+    } catch (error) {
+        res.json({error: error.message})
+    }
 
+})
 
 
 
