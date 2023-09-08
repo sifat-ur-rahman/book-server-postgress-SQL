@@ -9,6 +9,14 @@ app.get((req,res)=>{
 
 })
 
+// GET a book by id
+
+
+//POST books
+
+
+// DELETE books by id
+
 
 
 
