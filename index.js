@@ -38,7 +38,15 @@ app.post('/books', async(req,res)=>{
 })
 
 // DELETE books by id
+app.delete('/books/:id', async(req,res)=>{
+    try {
+        const {id} = req.params
+        res.status(200).json({message:`Specific book is deleted with id ${id}`})
+    } catch (error) {
+        res.json({error: error.message})
+    }
 
+})
 
 //PUT (update) a book by id
 
